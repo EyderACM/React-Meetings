@@ -1,1 +1,4 @@
-console.log('qué pedo carnal')
+import { AppServer } from './server'
+
+let app = new AppServer().getApp()
+export { app }
