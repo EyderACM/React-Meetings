@@ -1,0 +1,20 @@
+{
+  "name": "React-Meetings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EyderACM/React-Meetings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EyderACM/React-Meetings/issues"
+  },
+  "homepage": "https://github.com/EyderACM/React-Meetings#readme"
+}
