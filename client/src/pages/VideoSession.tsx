@@ -12,7 +12,7 @@ const VideoSession = () => {
 						Welcome to your video sharing app
 					</p>
 				</div>
-				<div className='flex justify-center w-2/5 py-4'>
+				<div className='flex justify-center w-2/6 py-4'>
 					<ChatForm />
 				</div>
 			</div>
