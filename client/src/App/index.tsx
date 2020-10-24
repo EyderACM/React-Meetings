@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-function App() {
-	return <div></div>
-}
+import Routes from './Routes'
+
+const App = () => (
+	<Fragment>
+		<Routes />
+	</Fragment>
+)
 
 export default App
