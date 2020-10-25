@@ -1,10 +1,16 @@
+import { TargetElement } from '@testing-library/user-event'
 import React from 'react'
 import colors from 'shared/colors'
 
-const ChatForm = () => {
+export interface IChatForm {
+	onFormSubmit: any
+}
+
+const ChatForm: React.FC<IChatForm> = ({ onFormSubmit }) => {
 	return (
 		<div className='w-full max-w-full'>
 			<form
+				onSubmit={onFormSubmit}
 				className={`w-full ${colors.WHITE} shadow-md rounded-lg px-4 pt-4 pb-2 mb-4`}
 			>
 				<div className='mb-4'>
@@ -23,7 +29,7 @@ const ChatForm = () => {
 						/>
 						<button
 							className={`${colors.INDIGO} hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
-							type='button'
+							type='submit'
 						>
 							Envíar
 						</button>
