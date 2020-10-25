@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 
 export interface ITextBubble {
+	author: String
 	color: String
 	children: ReactNode
 	className: String
@@ -9,17 +10,19 @@ export interface ITextBubble {
 }
 
 const TextBubble: React.FC<ITextBubble> = ({
+	author,
 	color,
 	children,
 	date,
 	className,
 	textColor,
 }) => (
-	<div
-		className={`flex flex-col w-2/3 max-w-content py-2 px-2 rounded-2xl mb-2 ${color} ${className} ${textColor}`}
-	>
-		<p className='pr-8'>{children}</p>
-		<p className='text-right text-xs'>{date}</p>
+	<div className={`flex flex-col w-2/3 max-w-content ${className} `}>
+		<p className='text-xs pl-2 px-2'>{author}</p>
+		<div className={`${textColor} ${color} py-2 px-2 rounded-2xl`}>
+			<p className='pr-4'>{children}</p>
+			<p className='text-right text-xs'>{date}</p>
+		</div>
 	</div>
 )
 

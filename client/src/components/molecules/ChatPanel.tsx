@@ -20,6 +20,7 @@ const ChatPanel: React.FC<IChatPanel> = ({ messages, sessionUsername }) => {
 					<If condition={username === sessionUsername}>
 						<Then>
 							<TextBubble
+								author='You'
 								className='text-right ml-auto'
 								color={colors.BG_INDIGO}
 								date={date}
@@ -30,6 +31,7 @@ const ChatPanel: React.FC<IChatPanel> = ({ messages, sessionUsername }) => {
 						</Then>
 						<Else>
 							<TextBubble
+								author={username}
 								className='text-left'
 								color={colors.BUBBLE_GRAY}
 								date={date}

@@ -17,41 +17,6 @@ const VideoSession = () => {
 			username: 'Juanito',
 			date: '3:13pm',
 		},
-		{
-			content: 'Qué pedo',
-			username: 'Juanito',
-			date: '3:13pm',
-		},
-		{
-			content: 'Qué pedo',
-			username: 'Juanito',
-			date: '3:13pm',
-		},
-		{
-			content: 'Qué pedo',
-			username: 'Juanito',
-			date: '3:13pm',
-		},
-		{
-			content: 'Qué pedo',
-			username: 'Juanito',
-			date: '3:13pm',
-		},
-		{
-			content: 'Qué pedo',
-			username: 'Juanito',
-			date: '3:13pm',
-		},
-		{
-			content: 'Qué pedo',
-			username: 'Juanito',
-			date: '3:13pm',
-		},
-		{
-			content: 'Qué pedo',
-			username: 'Juanito',
-			date: '3:13pm',
-		},
 	] as IMessage[]
 
 	return (
