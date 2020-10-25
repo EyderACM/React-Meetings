@@ -4,8 +4,10 @@ import ChatForm from 'components/molecules/ChatForm'
 import ChatPanel from 'components/molecules/ChatPanel'
 import IMessage from 'interfaces/IMessage'
 
+import { useImmer } from 'use-immer'
+
 const VideoSession = () => {
-	const messages = [
+	const [messages, setMessages] = useImmer<IMessage[]>([
 		{
 			content:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel enim, atque sit numquam explicabo eos, quos sint nobis doloribus dolorum beatae, iste hic assumenda.',
@@ -17,7 +19,22 @@ const VideoSession = () => {
 			username: 'Juanito',
 			date: '3:13pm',
 		},
-	] as IMessage[]
+	])
+
+	const handleFormSubmit = (event: any) => {
+		event.preventDefault()
+		const myMessageContent = event.target[0].value
+		const currentTime = new Date()
+		const message = {
+			content: myMessageContent,
+			username: 'Eyder',
+			date: `${currentTime.getHours()}:${currentTime.getMinutes()}`,
+		}
+		setMessages((draft) => {
+			draft.push(message)
+		})
+		event.target[0].value = ''
+	}
 
 	return (
 		<div className='py-8 bg-indigo-600 min-h-screen'>
@@ -30,7 +47,7 @@ const VideoSession = () => {
 				</div>
 				<div className='flex flex-col justify-top w-2/6 py-4'>
 					<ChatPanel messages={messages} sessionUsername='Eyder' />
-					<ChatForm />
+					<ChatForm onFormSubmit={handleFormSubmit} />
 				</div>
 			</div>
 		</div>
