@@ -7,9 +7,45 @@ import IMessage from 'interfaces/IMessage'
 const VideoSession = () => {
 	const messages = [
 		{
-			content: 'Hola',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel enim, atque sit numquam explicabo eos, quos sint nobis doloribus dolorum beatae, iste hic assumenda.',
 			username: 'Eyder',
 			date: '3:12pm',
+		},
+		{
+			content: 'Qué pedo',
+			username: 'Juanito',
+			date: '3:13pm',
+		},
+		{
+			content: 'Qué pedo',
+			username: 'Juanito',
+			date: '3:13pm',
+		},
+		{
+			content: 'Qué pedo',
+			username: 'Juanito',
+			date: '3:13pm',
+		},
+		{
+			content: 'Qué pedo',
+			username: 'Juanito',
+			date: '3:13pm',
+		},
+		{
+			content: 'Qué pedo',
+			username: 'Juanito',
+			date: '3:13pm',
+		},
+		{
+			content: 'Qué pedo',
+			username: 'Juanito',
+			date: '3:13pm',
+		},
+		{
+			content: 'Qué pedo',
+			username: 'Juanito',
+			date: '3:13pm',
 		},
 		{
 			content: 'Qué pedo',
@@ -19,7 +55,7 @@ const VideoSession = () => {
 	] as IMessage[]
 
 	return (
-		<div className='py-8 bg-indigo-600 h-screen'>
+		<div className='py-8 bg-indigo-600 min-h-screen'>
 			<div className='flex flex-col items-center'>
 				<div className='text-center'>
 					<h1 className='font-bold text-5xl text-white'>Share it</h1>
@@ -27,8 +63,8 @@ const VideoSession = () => {
 						Welcome to your video sharing app
 					</p>
 				</div>
-				<div className='flex flex-col justify-center w-2/6 py-4'>
-					<ChatPanel messages={messages} username='Eyder' />
+				<div className='flex flex-col justify-top w-2/6 py-4'>
+					<ChatPanel messages={messages} sessionUsername='Eyder' />
 					<ChatForm />
 				</div>
 			</div>

@@ -1,24 +1,42 @@
-import React, { FC } from 'react'
-import IMessage from 'interfaces/IMessage'
-
+import React from 'react'
 import { If, Then, Else } from 'react-if'
+
+import IMessage from 'interfaces/IMessage'
+import TextBubble from '../atoms/TextBubble'
+import colors from 'shared/colors'
 
 export interface IChatPanel {
 	messages: IMessage[]
-	username: String
+	sessionUsername: String
 }
 
-const ChatPanel = ({ messages, username }: IChatPanel) => {
+const ChatPanel: React.FC<IChatPanel> = ({ messages, sessionUsername }) => {
 	return (
-		<div className='w-full max-w-full bg-white shadow-md rounded-lg mb-4'>
-			<div className='w-full px-4 py-4'>
-				{messages.map((message) => (
-					<If condition={message.username === username}>
+		<div
+			className={`w-full max-w-full h-panel ${colors.WHITE} shadow-md rounded-lg mb-4 overflow-y-scroll`}
+		>
+			<div className='flex flex-col px-4 py-4'>
+				{messages.map(({ username, date, content }) => (
+					<If condition={username === sessionUsername}>
 						<Then>
-							<h3 className='text-left'>{message.content}</h3>
+							<TextBubble
+								className='text-right ml-auto'
+								color={colors.BG_INDIGO}
+								date={date}
+								textColor={colors.TEXT_WHITE}
+							>
+								{content}
+							</TextBubble>
 						</Then>
 						<Else>
-							<h3 className='text-right'>{message.content}</h3>
+							<TextBubble
+								className='text-left'
+								color={colors.BUBBLE_GRAY}
+								date={date}
+								textColor={colors.TEXT_GRAY}
+							>
+								{content}
+							</TextBubble>
 						</Else>
 					</If>
 				))}
