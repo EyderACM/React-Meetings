@@ -1,3 +1,5 @@
+// TODO refactor to twColors.js
+
 const colors = {
 	BACKGROUND: 'bg-indigo-600',
 	BUBBLE_GRAY: 'bg-gray-200',

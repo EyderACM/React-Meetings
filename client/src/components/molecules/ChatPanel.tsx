@@ -2,7 +2,7 @@ import React, { useRef, useLayoutEffect } from 'react'
 import { If, Then, Else } from 'react-if'
 
 import IMessage from 'interfaces/IMessage'
-import TextBubble from '../atoms/TextBubble'
+import TextBubble from './TextBubble'
 import colors from 'shared/colors'
 
 export interface IChatPanel {
