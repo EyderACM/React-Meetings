@@ -38,20 +38,20 @@ const VideoSession = () => {
   }
 
   return (
-    <div className='py-8 bg-indigo-600 min-h-screen'>
-      <div className='flex flex-col items-center'>
-        <div className='text-center'>
+    <div className='py-4 bg-indigo-600 min-h-screen'>
+      <div className='flex flex-col'>
+        <div className='text-start px-4'>
           <h1 className='font-bold text-5xl text-white'>Share it</h1>
           <p className='font-normal text-medium text-white'>
             Welcome to your video sharing app
           </p>
         </div>
         <div className='flex'>
-          <div className='flex flex-col items-start justify-top w-2/6 py-4'>
+          <div className='flex flex-col items-start justify-top w-2/6 py-4 px-2'>
             <ChatPanel messages={messages} sessionUsername='Eyder' />
             <ChatForm onFormSubmit={handleFormSubmit} />
           </div>
-          <div className='flex w-4/6 p-4'>
+          <div className='flex w-4/6 py-4 px-2'>
             <VideoModule />
           </div>
         </div>
