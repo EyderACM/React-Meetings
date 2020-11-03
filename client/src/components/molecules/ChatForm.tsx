@@ -3,6 +3,7 @@ import colors from 'shared/colors'
 
 import { Form } from '../atoms/shared/Form'
 import { InputLabel } from '../atoms/shared/InputLabel'
+import { TextInputWrapper } from '../atoms/ChatForm/TextInputWrapper'
 
 export interface IChatForm {
 	onFormSubmit: any
@@ -14,7 +15,7 @@ const ChatForm: React.FC<IChatForm> = ({ onFormSubmit }) => {
 			<Form onSubmit={onFormSubmit}>
 				<div className='mb-4'>
 					<InputLabel htmlFor='message'>Escribe un mensaje</InputLabel>
-					<div className='flex flex-row justify-between w-full'>
+					<TextInputWrapper>
 						<input
 							className={`${colors.INPUT_GRAY} appearance-none border-2 ${colors.INPUT_GRAY} rounded w-full mr-4 py-2 px-4 ${colors.TEXT_GRAY} leading-tight focus:outline-none ${colors.WHITE} focus:border-purple-500`}
 							id='message'
@@ -27,7 +28,7 @@ const ChatForm: React.FC<IChatForm> = ({ onFormSubmit }) => {
 						>
 							Envíar
 						</button>
-					</div>
+					</TextInputWrapper>
 				</div>
 			</Form>
 		</div>
